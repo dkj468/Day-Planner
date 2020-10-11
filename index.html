@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Day Planner</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="flex-row">
+      <div class="vertical-nav bg-white" id="sidebar">
+        <div class="py-4 px-3 mb-4 bg-light">
+          <div class="media d-flex align-items-center">
+            <img
+              src="https://cdn.pixabay.com/photo/2019/06/13/09/41/business-4271251_960_720.png"
+              alt="..."
+              width="65"
+              class="mr-3 rounded-circle img-thumbnail shadow-sm"
+            />
+            <div class="media-body">
+              <h4 class="m-0">Day Planner</h4>
+              <p class="font-weight-light text-muted mb-0">It manages you</p>
+            </div>
+          </div>
+        </div>
+
+        <p
+          class="text-gray font-weight-bold text-uppercase px-3 small pb-4 mb-0"
+        >
+          Main
+        </p>
+
+        <ul class="nav flex-column bg-white mb-0" id="left-menu">
+          <li class="nav-item">
+            <a href="#" class="nav-link text-dark font-italic bg-light">
+              <i class="fa fa-list-alt mr-3 personal fa-fw"></i>
+              All
+            </a>
+          </li>
+          <li class="nav-item">
+            <a
+              href="#"
+              class="nav-link text-dark font-italic"
+              data-category="0"
+            >
+              <i class="fa fa-user mr-3 personal fa-fw"></i>
+              Personal
+            </a>
+          </li>
+          <li class="nav-item">
+            <a
+              href="#"
+              class="nav-link text-dark font-italic"
+              data-category="1"
+            >
+              <i class="fa fa-briefcase mr-3 business fa-fw"></i>
+              Business
+            </a>
+          </li>
+          <li class="nav-item">
+            <a
+              href="#"
+              class="nav-link text-dark font-italic"
+              data-category="2"
+            >
+              <i class="fa fa-home mr-3 home fa-fw"></i>
+              Home
+            </a>
+          </li>
+          <li class="nav-item">
+            <a
+              href="#"
+              class="nav-link text-dark font-italic"
+              data-category="3"
+            >
+              <i class="fa fa-info-circle mr-3 other fa-fw"></i>
+              Other
+            </a>
+          </li>
+        </ul>
+
+        <!-- <p
+          class="text-gray font-weight-bold text-uppercase px-3 small py-4 mb-0"
+        >
+          Charts
+        </p>
+
+        <ul class="nav flex-column bg-white mb-0">
+          <li class="nav-item">
+            <a href="#" class="nav-link text-dark font-italic">
+              <i class="fa fa-area-chart mr-3 text-primary fa-fw"></i>
+              Area charts
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link text-dark font-italic">
+              <i class="fa fa-bar-chart mr-3 text-primary fa-fw"></i>
+              Bar charts
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link text-dark font-italic">
+              <i class="fa fa-pie-chart mr-3 text-primary fa-fw"></i>
+              Pie charts
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link text-dark font-italic">
+              <i class="fa fa-line-chart mr-3 text-primary fa-fw"></i>
+              Line charts
+            </a>
+          </li>
+        </ul> -->
+      </div>
+      <!-- End vertical navbar -->
+
+      <!-- Page content holder -->
+      <div class="page-content p-5" id="content">
+        <!-- Toggle button -->
+        <div class="action-panel">
+          <button
+            id="addItem"
+            type="button"
+            class="btn btn-light bg-white rounded-pill shadow-sm px-4 mb-4"
+          >
+            <i class="fa fa-plus mr-2"></i
+            ><small class="text-uppercase font-weight-bold">Add</small>
+          </button>
+        </div>
+
+        <!-- Demo content -->
+        <div class="items" id="items">
+          <!-- <div class="item-container">
+            <div class="item-detail">
+              <div class="item-name">
+                <span>Make a Schedule</span>
+              </div>
+              <div class="catagory">
+                <i class="fa fa-user personal mr-2"></i>
+              </div>
+            </div>
+          </div>
+          <div class="item-container">
+            <div class="item-detail">
+              <div class="item-name">
+                <span>Make a Schedule</span>
+              </div>
+              <div class="catagory">
+                <i class="fa fa-briefcase business mr-2"></i>
+              </div>
+            </div>
+            <div class="item-action">
+              <a href="#" class="delete-item"
+                ><i class="fa fa-times mr-2"></i
+              ></a>
+            </div>
+          </div> -->
+        </div>
+        <!-- End demo content -->
+      </div>
+
+      <div class="right-panel inactive" id="right-panel">
+        <form id="new-task">
+          <div class="form-group">
+            <label for="usr">Task Name</label>
+            <input
+              type="text"
+              class="form-control"
+              id="taskName"
+              placeholder="task name"
+            />
+          </div>
+          <div class="form-group">
+            <label for="sel1">Select Category</label>
+            <select class="form-control" id="taskCatagory">
+              <option>Personal</option>
+              <option>Business</option>
+              <option>Home</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <button
+              type="button"
+              class="form-control btn-primary"
+              id="btnAdd"
+              disabled
+            >
+              Add
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script type="text/javascript" src="index.js"></script>
+  </body>
+</html>
